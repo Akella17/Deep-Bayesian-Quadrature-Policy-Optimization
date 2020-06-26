@@ -14,8 +14,7 @@
 		},
 		"TRPO":
 		{
-			"svd_low_rank": 90,
-			"lr": 7e-3
+			"svd_low_rank": 90
 		}
 	},
 	"HalfCheetah-v2":
@@ -33,8 +32,7 @@
 		},
 		"TRPO":
 		{
-			"svd_low_rank": 90,
-			"lr": 7e-3
+			"svd_low_rank": 90
 		}
 	},
 	"Hopper-v2":
@@ -52,11 +50,10 @@
 		},
 		"TRPO":
 		{
-			"svd_low_rank": 45,
-			"lr": 2.1e-3
+			"svd_low_rank": 45
 		}
 	},
-	"Walker-v2":
+	"Walker2d-v2":
 	{
 		"advantage_flag": false,
 		"VanillaPG": 
@@ -71,8 +68,7 @@
 		},
 		"TRPO":
 		{
-			"svd_low_rank": 75,
-			"lr": 2.1e-3
+			"svd_low_rank": 75
 		}
 	},
 	"Swimmer-v2":
@@ -90,8 +86,7 @@
 		},
 		"TRPO":
 		{
-			"svd_low_rank": 30,
-			"lr": 2.1e-3
+			"svd_low_rank": 30
 		}
 	},
 	"Humanoid-v2":
@@ -109,11 +104,10 @@
 		},
 		"TRPO":
 		{
-			"svd_low_rank": 100,
-			"lr": 2.31e-3
+			"svd_low_rank": 100
 		}
 	},
-	"HumanoidStandnup-v2":
+	"HumanoidStandup-v2":
 	{
 		"advantage_flag": true,
 		"VanillaPG": 
@@ -123,13 +117,13 @@
 		},
 		"NPG":
 		{
+			"MC_lr": 2.31e-4,
 			"svd_low_rank": 140,
 			"lr": 2.1e-3
 		},
 		"TRPO":
 		{
-			"svd_low_rank": 140,
-			"lr": 2.1e-3
+			"svd_low_rank": 140
 		}
 	}
 }

@@ -70,8 +70,8 @@ def get_args():
 		parser.add_argument('--likelihood_noise_level', type = float,
 							default=1e-4, metavar='G',
 		                    help='GPs noise variance sigma^2')
-		parser.add_argument("--UAPG_flag", type=bool,
-							default=True, help="If true then the gradient covariance is used for computing UAPG updates")
+		parser.add_argument("--UAPG_flag", action='store_true',
+							help="If true then the gradient covariance is used for computing UAPG updates")
 		parser.add_argument('--UAPG_epsilon', type=float,
 							default=3.0, metavar='G',
 		                    help='Maximum factor by which a DBQPG compoment stepsize is increased during the UAPG update (for NPG or TRPO)')
@@ -81,12 +81,16 @@ def get_args():
 	if args.seed == -1:
 		args.seed = int(np.random.randint(low = 0, high = 100000000, size = 1)[0])
 	#--------------------------------------------------------------------------------------------------------------------------------------------------------
-	# Hyperparameter Helper (feel free to comment this section for a manual overide)
+	# Hyperparameter Helper for few MuJoCo environments (feel free to comment this section for a manual overide)
 	with open('helper_config.json') as config:
 		config = json.load(config)
-		args.advantage_flag = config[args.env_name]["advantage_flag"]
-		args.lr = config[args.env_name][args.pg_algorithm]["lr"]
-		args.svd_low_rank = config[args.env_name][args.pg_algorithm]["svd_low_rank"]
+		if args.env_name in config:
+			args.advantage_flag = config[args.env_name]["advantage_flag"]
+			args.svd_low_rank = config[args.env_name][args.pg_algorithm]["svd_low_rank"]
+			if args.pg_algorithm != 'TRPO':
+				args.lr = config[args.env_name][args.pg_algorithm]["lr"]
+			if args.pg_estimator == 'MC' and 'MC_lr' in config[args.env_name][args.pg_algorithm]:
+				args.lr = config[args.env_name][args.pg_algorithm]["MC_lr"]
 	#--------------------------------------------------------------------------------------------------------------------------------------------------------
 	# Logs the cumulative reward statistics over episodes
 	prefix = args.pg_estimator + "_" + args.pg_algorithm

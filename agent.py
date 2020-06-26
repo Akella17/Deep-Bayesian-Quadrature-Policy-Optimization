@@ -30,13 +30,13 @@ args.device = torch.device("cuda:"+args.gpu_id if args.pg_estimator == "BQ" else
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Instantiating the policy and value function neural networks, GP's MLL objective function and their respective optimizers
 print('Policy Optimization Framework :- ', args.pg_algorithm)
-print('Policy Gradient Estimator :- ' + (('UAPG' if args.UAPG_flag else 'DBQPG') if args.pg_estimator == "BQ" else 'MC'))
+print('Policy Gradient Estimator :- ' + (('UAPG' if args.UAPG_flag else 'DBQPG') if args.pg_estimator == "BQ" else 'MC') + "\n")
 
 policy_net = Policy(num_inputs, num_actions).to(args.device)
 # TRPO does not require a policy optimizer since it uses a KL divergence constraint for robust step-size selection.
 policy_optimizer = torch.optim.Adam(policy_net.parameters(), lr=args.lr, weight_decay=1e-3) if args.pg_algorithm != "TRPO" else None
 
-value_net, gp_mll, likelihood, gp_value_optimizer = None, None, None, None
+value_net, gp_mll, likelihood, gp_value_optimizer, nn_value_optimizer = None, None, None, None, None
 if args.pg_estimator == "BQ":
 	# Instantiating the value network with both GP and value heads for approximating Q(s,a) and V(s)
 	likelihood = gpytorch.likelihoods.GaussianLikelihood(noise_constraint=gpytorch.constraints.GreaterThan(args.likelihood_noise_level)).to(args.device)
@@ -46,14 +46,13 @@ if args.pg_estimator == "BQ":
 	gp_value_optimizer = torch.optim.Adam(GP_params, lr=0.0001, weight_decay=1e-3) # Used for optimizing GP critic
 	value_net.train()
 	likelihood.train()
-nn_value_optimizer = None
+
 if args.advantage_flag:
     if args.pg_estimator == 'MC':
         # Instantiating the value network with only value head for approximating V(s)
         value_net = Value(num_inputs, args.pg_estimator) # subsequently used for computing GAE estimates
-        gp_value_optimizer = None
     NN_params = [param for name, param in value_net.named_parameters() if ('feature_extractor' in name or 'value_head' in name)]	
-    nn_value_optimizer = torch.optim.Adam(NN_params, lr=0.0001, weight_decay=1e-3) if args.advantage_flag else None # Used for optimizing ordinary critic
+    nn_value_optimizer = torch.optim.Adam(NN_params, lr=0.0001, weight_decay=1e-3)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Policy Optimization
 running_state = ZFilter((num_inputs,), clip=5)

@@ -44,8 +44,8 @@ class FeatureExtractor(nn.Module):
         return x
 
 class Value(gpytorch.models.ExactGP, nn.Module):
-    # Monte-Carlo PG estimator :- Only State-value V(s) function approximation
-    # Bayesian Quadrature PG estimator :- Both state-value V(s) and action-value Q(s,a) function approximation
+    # Monte-Carlo PG estimator :- Only State-value V(s) function approximation, i.e. feature extractor + value head
+    # Bayesian Quadrature PG estimator :- Both state-value V(s) and action-value Q(s,a) function approximation, i.e. feature extractor + value head + GP head
     def __init__(self, NN_num_inputs, pg_estimator, fisher_num_inputs = None, gp_likelihood = None):
         # fisher_num_inputs is same as svd_low_rank, because of the linear approximation of the Fisher kernel through FastSVD.
         if pg_estimator == 'MC':
@@ -82,11 +82,13 @@ class Value(gpytorch.models.ExactGP, nn.Module):
         return state_value_estimate
 
     def forward(self, x, state_multiplier, fisher_multiplier, only_state_kernel=False):
-        # Refer GPytorch documentation (https://docs.gpytorch.ai/) for better understanding
+        # Invokes the GP head for computing the action value function Q(s,a), although Q(s,a) is never explicitly computed.
+        # Instead, we implicitly compute (K + sigma^2 I)^{-1}*A^{GAE} which subsequently provides the BQ's PG estimate.
         extracted_features = self.feature_extractor(x[:,:self.NN_num_inputs])
         extracted_features = gpytorch.utils.grid.scale_to_bounds(extracted_features, -1, 1)
 
         if only_state_kernel:
+            # Used for computing inverse vanilla gradient covariance (Cov^{BQ})^{-1} or natural gradient covariance (Cov^{NBQ})^{-1}
             mean_x = self.mean_module(extracted_features)
             # Implicitly computes (c_1 K_s + sigma^2 I) which can be used for efficiently computing the MVM (c_1 K_s + sigma^2 I)^{-1}*v 
             covar_x = gpytorch.lazy.ConstantMulLazyTensor(self.covar_module_1(extracted_features), state_multiplier)
