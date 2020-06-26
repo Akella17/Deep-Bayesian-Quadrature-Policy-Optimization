@@ -26,7 +26,7 @@ num_inputs = env.observation_space.shape[0]
 num_actions = env.action_space.shape[0]
 print(' State Dimensions :- ', num_inputs)
 print(' Action Dimensions :- ', num_actions)
-args.device = torch.device("cuda:"+args.gpu_id if args.pg_estimator == "BQ" else "cpu")
+args.device = torch.device("cuda" if args.pg_estimator == "BQ" else "cpu")
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Instantiating the policy and value function neural networks, GP's MLL objective function and their respective optimizers
 print('Policy Optimization Framework :- ', args.pg_algorithm)
