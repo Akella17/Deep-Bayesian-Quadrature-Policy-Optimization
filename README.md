@@ -13,13 +13,5 @@ For running Monte-Carlo algorithm baselines, use [pytorch-trpo](https://github.c
 
 Kindly take a look at the arguments of ```bac_main.py``` file to select the experiment that you want to run. The experiment will run for 1000 policy updates and the logs get stored in ```session_logs/``` folder.
 
-### Requirements
-1) GPU hardware (for fast kernel learning and effective use of GPyTorch)
-2) PyTorch (1.1.0)
-3) GPyTorch library (0.3.5)
-4) OpenAI Gym (0.15.4)
-5) MuJoCo physics engine
-6) mujoco-py (2.0.2.9)
-7) TensorboardX (1.9)
-8) Numpy (1.18.1)
-9) Scipy (1.4.1)
+### Installation
+This repository uses Python 3.6. To run the code, one shall need to install MuJoCo (opensource alternatives include roboschool, pybullet) and the dependencies mentioned in ```requirements.txt```

@@ -1,7 +1,5 @@
 import math
-
 import numpy as np
-
 import torch
 
 
@@ -22,7 +20,6 @@ def get_flat_params_from(model):
     params = []
     for param in model.parameters():
         params.append(param.data.view(-1))
-
     flat_params = torch.cat(params)
     return flat_params
 
@@ -52,6 +49,5 @@ def get_flat_grad_from(net, grad_grad=False):
             grads.append(param.grad.grad.view(-1))
         else:
             grads.append(param.grad.view(-1))
-
     flat_grad = torch.cat(grads)
     return flat_grad
