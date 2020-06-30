@@ -7,8 +7,6 @@ import logging
 import unittest
 import math
 import numpy as np
-from scipy.linalg import cholesky, eigh, lu, qr, svd, norm, solve
-from scipy.sparse import coo_matrix, issparse, spdiags
 import torch
 import gpytorch
 from torch.autograd import Variable
