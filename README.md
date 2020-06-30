@@ -54,7 +54,8 @@ Supported Environments
 1. [Classic Control](https://gym.openai.com/envs/#classic_control) 
 2. [MuJoCo](http://www.mujoco.org/)
 3. [PyBullet](http://pybullet.org/)
-4. [Roboschool](https://github.com/openai/roboschool) [DEPRECATED]
+4. [Roboschool](https://github.com/openai/roboschool)
+5. [DeepMind Control Suite](https://github.com/deepmind/dm_control) (via [dm_control2gym](https://github.com/martinseilair/dm_control2gym))
 
 Training
 --------
