@@ -19,7 +19,7 @@ Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavam
 2. a consistent improvement in the sample complexity and average return for several policy gradient algorithms
 3. a methodological way to quantify the uncertainty in gradient estimation.
 
-This repository provides a computationally efficient high-dimensional generalization implementation of BQ for estimating the **policy gradient integral** (gradient vector) and the **estimation uncertainty** (gradient covariance matrix). Provides a **modular implementation** of several policy gradient methods, currently supporting three policy gradient estimators and three policy gradient algorithms (9 combinations in total):
+This repository provides a computationally efficient generalized high-dimensional implementation of BQ for estimating the **policy gradient integral** (gradient vector) and the **estimation uncertainty** (gradient covariance matrix). Provides a **modular implementation** of several policy gradient methods, currently supporting three policy gradient estimators and three policy gradient algorithms (9 combinations in total):
 
 **Policy gradient estimators** :-
 1. *Monte-Carlo*
