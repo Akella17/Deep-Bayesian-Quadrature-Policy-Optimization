@@ -149,10 +149,12 @@ def get_args():
     write_filename = write_filename + ")_batchsize(" + str(
         args.batch_size) + ")_seed(" + str(args.seed) + ")"
 
-    if not os.path.exists(args.output_directory + write_filename):
-        os.makedirs(args.output_directory + write_filename)
-    summa_writer = SummaryWriter(logdir=args.output_directory + write_filename,
-                                 comment=args.pg_estimator + "-PG")
+    pg_estimator_name = args.pg_estimator if args.pg_estimator == "MC" else "UAPG" if args.UAPG_flag else "DBQPG"
+    final_directory = os.path.join(args.output_directory, args.env_name, args.pg_algorithm, pg_estimator_name,  write_filename)
+    if not os.path.exists(final_directory):
+        os.makedirs(final_directory)
+    summa_writer = SummaryWriter(logdir=final_directory,
+                                 comment=pg_estimator_name + "-PG")
     #--------------------------------------------------------------------------------------------------------------------------------------------------------
 
     return args, summa_writer
