@@ -25,7 +25,7 @@ This repository contains a computationally efficient implementation of BQ for es
 <!-- 1. *Monte-Carlo Estimation*
 2. *Deep Bayesian Quadrature Policy Gradient (DBQPG)*
 3. *Uncertainty Aware Policy Gradient (UAPG)* -->
-| **Monte-Carlo Estimation** | **Deep Bayesian Quadrature Policy Gradient (DBQPG)** | **Uncertainty Aware Policy Gradient (UAPG)** |
+| (i) **Monte-Carlo Estimation** | (ii) **Deep Bayesian Quadrature Policy Gradient (DBQPG)** | (iii) **Uncertainty Aware Policy Gradient (UAPG)** |
 | --------------------------- |:-----------|:---------------------------------------:|
 
 
@@ -33,7 +33,7 @@ This repository contains a computationally efficient implementation of BQ for es
 <!-- 1. *Vanilla Policy Gradient*
 2. *Natural Policy Gradient (NPG)*
 3. *Trust-Region Policy Optimization (TRPO)* -->
-| **Vanilla Policy Gradient** | **Natural Policy Gradient (NPG)** | **Trust-Region Policy Optimization (TRPO)** |
+| (i) **Vanilla Policy Gradient** | (ii) **Natural Policy Gradient (NPG)** | (iii) **Trust-Region Policy Optimization (TRPO)** |
 | --------------------------- |:-----------|:---------------------------------------:|
 
 Project Setup
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 Supported Environments
 ----------------------
 
-1. [Gym's] Classic Control
+1. [Classic Control](https://gym.openai.com/envs/#classic_control) 
 2. [MuJoCo](http://www.mujoco.org/)
 3. [PyBullet](http://pybullet.org/)
 4. [Roboschool](https://github.com/openai/roboschool) [DEPRECATED]
@@ -101,7 +101,7 @@ Implementation References
 - [GPyTorch library](https://gpytorch.ai/)
 	- Structured kernel interpolation (SKI) with Toeplitz method for RBF kernel. 
 	- Kernel learning with GPU acceleration.
-- [fbpca](https://research.fb.com/blog/2014/09/fast-randomized-svd/) code in PyTorch.
+- [fbpca](https://research.fb.com/blog/2014/09/fast-randomized-svd/)
 	- Fast randomized singular value decomposition (SVD) through implicit matrix-vector multiplications.
 - ["A new trick for calculating Jacobian vector products"](https://j-towns.github.io/2017/06/12/A-new-trick.html)
 	- Efficient *Jvp* computation through regular reverse-mode autodiff (more details in Appendix D of [our paper](https://arxiv.org/abs/2006.15637)).
@@ -114,7 +114,7 @@ Contributions are very welcome. If you know how to make this code better, please
 TODO
 ----
 
-- Implement policy network for discrete action space and test on ALE.
+- Implement policy network for discrete action space and test on Arcade Learning Environment (ALE).
 - Add other policy gradient algorithms.
 
 Citation
