@@ -14,7 +14,10 @@ Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavam
 
 ![Bayesian Quadrature for Policy Gradient](/imgs/BQforPG.png)
 
-**Bayesian quadrature** is an approach from probabilistic numerics for approximating a numerical integration. When estimating the policy gradient integral, replacing standard Monte-Carlo estimation with Bayesian quadrature provides (i) more accurate gradient estimates with a significantly lower variance, (ii) a consistent improvement in the sample complexity and average return for several policy gradient algorithms, and, (iii) a methodological way to quantify the uncertainty in gradient estimation.
+**Bayesian quadrature** is an approach from probabilistic numerics for approximating a numerical integration. When estimating the policy gradient integral, replacing standard Monte-Carlo estimation with Bayesian quadrature provides
+1. more accurate gradient estimates with a significantly lower variance
+2. a consistent improvement in the sample complexity and average return for several policy gradient algorithms
+3. a methodological way to quantify the uncertainty in gradient estimation.
 
 This repository provides a computationally efficient high-dimensional generalization implementation of BQ for estimating the **policy gradient integral** (gradient vector) and the **estimation uncertainty** (gradient covariance matrix). Provides a **modular implementation** of several policy gradient methods, currently supporting three policy gradient estimators and three policy gradient algorithms (9 combinations in total):
 
