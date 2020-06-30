@@ -2,7 +2,7 @@ Deep Bayesian Quadrature Policy Optimization
 ============================================
 
 <h4>
-Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavamzadeh<sup>2</sup>, Anima Anandkumar<sup>3</sup>, and Yisong Yue<sup>3</sup>
+Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavamzadeh<sup>2</sup>, Anima Anandkumar<sup>3</sup>, Yisong Yue<sup>3</sup>
 </br>
 <span style="font-size: 14pt; color: #555555">
 <sup>1</sup>Indian Institute of Technology Roorkee, <sup>2</sup>Google Research, <sup>3</sup>Caltech
@@ -56,7 +56,6 @@ python agent.py --env-name <gym_environment_name> --pg_algorithm <VanillaPG/NPG/
 ```
 All the experiments will run for 1000 policy updates and the logs get stored in ```session_logs/``` folder. Kindly take a look at the ```arguments.py``` file to select the experiment that you want to run. To reproduce the results in the paper, refer the following command:
 ```train
-# General Command
 # Running Monte-Carlo baselines
 python agent.py --env-name <gym_environment_name> --pg_algorithm <VanillaPG/NPG/TRPO> --pg_estimator MC
 # DBQPG as the policy gradient estimator
