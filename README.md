@@ -22,19 +22,19 @@ Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavam
 This repository contains a computationally efficient implementation of BQ for estimating the **policy gradient integral** (gradient vector) and the **estimation uncertainty** (gradient covariance matrix). The source code is written in a **modular fashion**, currently supporting three policy gradient estimators and three policy gradient algorithms (9 combinations overall):
 
 **Policy Gradient Estimators** :-
-<!-- 1. *Monte-Carlo Estimation*
+1. *Monte-Carlo Estimation*
 2. *Deep Bayesian Quadrature Policy Gradient (DBQPG)*
-3. *Uncertainty Aware Policy Gradient (UAPG)* -->
-| (i) **Monte-Carlo Estimation** | (ii) **Deep Bayesian Quadrature Policy Gradient (DBQPG)** | (iii) **Uncertainty Aware Policy Gradient (UAPG)** |
-| --------------------------- |:-----------|:---------------------------------------:|
+3. *Uncertainty Aware Policy Gradient (UAPG)*
+<!-- | (i) **Monte-Carlo Estimation** | (ii) **Deep Bayesian Quadrature Policy Gradient (DBQPG)** | (iii) **Uncertainty Aware Policy Gradient (UAPG)** |
+| --------------------------- |:-----------|:---------------------------------------:| -->
 
 
 **Policy Gradient Algorithms** :-
-<!-- 1. *Vanilla Policy Gradient*
+1. *Vanilla Policy Gradient*
 2. *Natural Policy Gradient (NPG)*
-3. *Trust-Region Policy Optimization (TRPO)* -->
-| (i) **Vanilla Policy Gradient** | (ii) **Natural Policy Gradient (NPG)** | (iii) **Trust-Region Policy Optimization (TRPO)** |
-| --------------------------- |:-----------|:---------------------------------------:|
+3. *Trust-Region Policy Optimization (TRPO)*
+<!-- | (i) **Vanilla Policy Gradient** | (ii) **Natural Policy Gradient (NPG)** | (iii) **Trust-Region Policy Optimization (TRPO)** |
+| --------------------------- |:-----------|:---------------------------------------:| -->
 
 Project Setup
 -------------
