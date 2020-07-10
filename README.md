@@ -14,6 +14,9 @@ Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavam
 
 ![Bayesian Quadrature for Policy Gradient](/imgs/BQforPG.png)
 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+[![HitCount](http://hits.dwyl.com/Akella17/Deep-Bayesian-Quadrature-Policy-Optimization.svg)](http://hits.dwyl.com/Akella17/Deep-Bayesian-Quadrature-Policy-Optimization)
+
 **Bayesian quadrature** is an approach in probabilistic numerics for approximating a numerical integration. When estimating the policy gradient integral, replacing standard Monte-Carlo estimation with Bayesian quadrature provides
 1. more accurate gradient estimates with a significantly lower variance
 2. a consistent improvement in the sample complexity and average return for several policy gradient algorithms
