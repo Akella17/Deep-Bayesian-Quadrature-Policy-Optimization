@@ -16,7 +16,7 @@ Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavam
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Akella17/Deep-Bayesian-Quadrature-Policy-Optimization/blob/master/LICENSE)
 [![HitCount](http://hits.dwyl.com/Akella17/Deep-Bayesian-Quadrature-Policy-Optimization.svg)](http://hits.dwyl.com/Akella17/Deep-Bayesian-Quadrature-Policy-Optimization)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#anchors-in-markdown)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#Contributing)
 
 **Bayesian quadrature** is an approach in probabilistic numerics for approximating a numerical integration. When estimating the policy gradient integral, replacing standard Monte-Carlo estimation with Bayesian quadrature provides
 1. more accurate gradient estimates with a significantly lower variance
@@ -111,7 +111,7 @@ Implementation References
 - ["A new trick for calculating Jacobian vector products"](https://j-towns.github.io/2017/06/12/A-new-trick.html)
 	- Efficient *Jvp* computation through regular reverse-mode autodiff (more details in Appendix D of [our paper](https://arxiv.org/abs/2006.15637)).
 
-[Contributing](#anchors-in-markdown)
+Contributing
 ------------
 
 Contributions are very welcome. If you know how to make this code better, please open an issue. If you want to submit a pull request, please open an issue first. Also see the todo list below.
