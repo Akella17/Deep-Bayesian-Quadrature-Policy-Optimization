@@ -2,10 +2,10 @@ Deep Bayesian Quadrature Policy Optimization
 ============================================
 
 <h4>
-Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>3</sup>, Mohammad Ghavamzadeh<sup>2</sup>, Anima Anandkumar<sup>3</sup>, Yisong Yue<sup>3</sup>
+Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>2</sup>, Mohammad Ghavamzadeh<sup>3</sup>, Anima Anandkumar<sup>4</sup>, Yisong Yue<sup>4</sup>
 </br>
 <span style="font-size: 14pt; color: #555555">
-<sup>1</sup>Indian Institute of Technology Roorkee, <sup>2</sup>Google Research, <sup>3</sup>Caltech
+<sup>1</sup>Indian Institute of Technology Roorkee, <sup>2</sup>Purdue University, <sup>3</sup>Google Research, <sup>4</sup>Caltech
 </span>
 </h4>
 <hr>
