@@ -137,6 +137,8 @@ def get_args():
             if args.pg_estimator == 'MC' and 'MC_lr' in config[args.env_name][
                     args.pg_algorithm]:
                 args.lr = config[args.env_name][args.pg_algorithm]["MC_lr"]
+    if args.svd_low_rank == -1:
+        args.svd_low_rank = 50
     #--------------------------------------------------------------------------------------------------------------------------------------------------------
     # Logs the cumulative reward statistics over episodes
     prefix = args.pg_estimator + "_" + args.pg_algorithm

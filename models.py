@@ -81,9 +81,7 @@ class Value(gpytorch.models.ExactGP, nn.Module):
             fisher_kernel_active_dims = torch.tensor(
                 list(range(fisher_num_inputs +
                            NN_num_outputs))[NN_num_outputs:])
-            self.covar_module_2 = LinearKernel(active_dims=torch.tensor(
-                list(range(fisher_num_inputs +
-                           NN_num_outputs))[NN_num_outputs:]))
+            self.covar_module_2 = LinearKernel(active_dims=fisher_kernel_active_dims)
             self.covar_module_1 = gpytorch.kernels.AdditiveStructureKernel(
                 gpytorch.kernels.ScaleKernel(
                     gpytorch.kernels.GridInterpolationKernel(
@@ -91,7 +89,7 @@ class Value(gpytorch.models.ExactGP, nn.Module):
                         grid_size=grid_size,
                         num_dims=1)),
                 num_dims=NN_num_outputs,
-                active_dims=torch.tensor(list(range(NN_num_outputs))))
+                active_dims=state_kernel_active_dims)
 
     def nn_forward(self, x):
         # Invokes the value_head for computing the state value function V(s), subsequently used for computing GAE estimates
