@@ -12,6 +12,8 @@ Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>2</sup>, Mohammad Ghavam
 
 **Preprint:** [arxiv.org/abs/2006.15637](https://arxiv.org/abs/2006.15637)
 
+**Project Website:** [akella17.github.io/publications/Deep-Bayesian-Quadrature-Policy-Optimization/](https://akella17.github.io/publications/Deep-Bayesian-Quadrature-Policy-Optimization/)
+
 ![Bayesian Quadrature for Policy Gradient](/imgs/BQforPG.png)
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Akella17/Deep-Bayesian-Quadrature-Policy-Optimization/blob/master/LICENSE)
