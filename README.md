@@ -11,7 +11,7 @@ Akella Ravi Tej<sup>1</sup>, Kamyar Azizzadenesheli<sup>2</sup>, Mohammad Ghavam
 <hr>
 
 **Preprint:** [arxiv.org/abs/2006.15637](https://arxiv.org/abs/2006.15637)<br>
-**Publication:** [AAAI-21](https://aaai.org/Conferences/AAAI-21/), [NeurIPS Deep RL Workshop 2020](https://sites.google.com/view/deep-rl-workshop-neurips2020/home), [NeurIPS Real-World RL Workshop 2020](https://sites.google.com/view/neurips2020rwrl)<br>
+**Publication:** [AAAI-21](https://aaai.org/Conferences/AAAI-21/) (also presented at NeurIPS [Deep RL](https://sites.google.com/view/deep-rl-workshop-neurips2020/home) and [Real-World RL](https://sites.google.com/view/neurips2020rwrl) Workshops 2020)<br>
 **Project Website:** [akella17.github.io/publications/Deep-Bayesian-Quadrature-Policy-Optimization/](https://akella17.github.io/publications/Deep-Bayesian-Quadrature-Policy-Optimization/)
 
 ![Bayesian Quadrature for Policy Gradient](/imgs/BQforPG.png)
